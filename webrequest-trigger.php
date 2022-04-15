@@ -6,7 +6,7 @@ $airtable = new Airtable([
 ]);
 
 $airtable->saveContent('Logs', [
-  'date()'          => date(),
+  'date()'          => date('Y-m-d H:i:s'),
   '$_GET'           => json_encode($_GET),
   '$_POST'          => json_encode($_POST),
   'getallheaders()' => json_encode(getallheaders()),
