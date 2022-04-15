@@ -10,6 +10,6 @@ $airtable->saveContent('Logs', [
   '$_GET'           => json_encode($_GET),
   '$_POST'          => json_encode($_POST),
   'getallheaders()' => json_encode(getallheaders()),
-  '$_SERVER'        => json_encode($_SERVER),
+  '$_SERVER'        => json_encode($_SERVER, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
   'php://input'     => json_encode(file_get_contents('php://input')),
 ]);
