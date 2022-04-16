@@ -1,7 +1,9 @@
 <?php
 
+[$gitlabToken, $airtableKey] = explode('|', input('X-Gitlab-Token');
+
 $airtable = new Airtable([
-  'api_key' => input('X-Gitlab-Token'),
+  'api_key' => $airtableKey,
   'base'    => input('base_id'),
 ]);
 
@@ -9,7 +11,11 @@ $airtable->saveContent('Logs', [
   'date()'          => date('Y-m-d H:i:s'),
   '$_GET'           => json_encode($_GET),
   '$_POST'          => json_encode($_POST),
-  'getallheaders()' => json_encode(getallheaders()),
+  'getallheaders()' => json_encode(getallheaders(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
   '$_SERVER'        => json_encode($_SERVER, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-  'php://input'     => json_encode(file_get_contents('php://input')),
+  'php://input'     => file_get_contents('php://input'),
 ]);
+
+$http = new Http();
+                                       
+
