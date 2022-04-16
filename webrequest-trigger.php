@@ -17,5 +17,13 @@ $airtable->saveContent('Logs', [
 ]);
 
 $http = new Http();
+         
+$projectId = input('project_id');
+$gitlabUrl = 'https://gitlab.com/api/v4/projects/'.$projectId.'/trigger/pipeline';
                                        
-
+$http->request('POST', $gitlabUrl, [
+  'form_params' => [
+    'token' => $gitlabToken,
+    'ref' => 'main',
+  ]
+]);
