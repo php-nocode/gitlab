@@ -1,6 +1,17 @@
 <?php
 
-[$gitlabToken, $airtableKey] = explode('|', input('X-Gitlab-Token');
+/**
+ * Webhook URL  
+ * 
+ *   https://webrequest.cc/php-nocode/gitlab/trigger/pipeline?base_id={Airtable Base ID}&project_id={GitLab Project ID}
+ *  
+ * Secret Token
+ *
+ *   {GitLab Trigger Token}+{Airtable Api Key}
+ *
+ */
+
+[$gitlabToken, $airtableKey] = explode('+', input('X-Gitlab-Token');
 
 $airtable = new Airtable([
   'api_key' => $airtableKey,
