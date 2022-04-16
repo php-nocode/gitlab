@@ -11,7 +11,7 @@
  *
  */
 
-[$gitlabToken, $airtableKey] = explode('+', input('X-Gitlab-Token');
+[$gitlabToken, $airtableKey] = explode('+', input('X-Gitlab-Token'));
 
 $airtable = new Airtable([
   'api_key' => $airtableKey,
