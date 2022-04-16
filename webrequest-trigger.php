@@ -3,7 +3,7 @@
 /**
  * Webhook URL  
  * 
- *   https://webrequest.cc/php-nocode/gitlab/trigger/pipeline?base_id={Airtable Base ID}&project_id={GitLab Project ID}
+ *   https://webrequest.cc/php-nocode/gitlab/trigger/pipeline?_bypass_landing_page=yes&base_id={Airtable Base ID}&project_id={GitLab Project ID}
  *  
  * Secret Token
  *
