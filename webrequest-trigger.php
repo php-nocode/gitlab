@@ -32,7 +32,7 @@ $response = $http->request('POST', $gitlabUrl, [
 
 print_r($response->getBody()."");
 
-$airtable->saveContent('Logs', [
+$response = $airtable->saveContent('Logs', [
   'date()'          => date('Y-m-d H:i:s'),
   '$_GET'           => json_encode($_GET),
   '$_POST'          => json_encode($_POST),
@@ -42,3 +42,4 @@ $airtable->saveContent('Logs', [
   '$response'       => $response->getBody(),
 ]);
 
+var_dump($response);
