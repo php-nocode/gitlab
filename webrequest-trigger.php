@@ -18,7 +18,7 @@ $airtable = new Airtable([
   'base'    => input('base_id'),
 ]);
 
-$http = new Http();
+$http = new \GuzzleHttp\Client();
          
 $projectId = input('project_id');
 $gitlabUrl = 'https://gitlab.com/api/v4/projects/'.$projectId.'/trigger/pipeline';
