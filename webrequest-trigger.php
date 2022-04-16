@@ -39,7 +39,7 @@ $response = $airtable->saveContent('Logs', [
   'getallheaders()' => json_encode(getallheaders(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
   '$_SERVER'        => json_encode($_SERVER, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
   'php://input'     => file_get_contents('php://input'),
-  '$response'       => $response->getBody(),
+  '$response'       => (string) $response->getBody(),
 ]);
 
 var_dump($response);
